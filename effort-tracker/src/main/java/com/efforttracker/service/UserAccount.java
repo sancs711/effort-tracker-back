@@ -11,7 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
@@ -24,7 +23,7 @@ import org.hibernate.validator.constraints.Length;
  */
 @Entity
 @Table(name = "\"User\"")
-public class User implements Serializable{
+public class UserAccount implements Serializable{
 	
 	/**
 	 * 
@@ -44,7 +43,6 @@ public class User implements Serializable{
 	@Column(name = "password")
 	@Length(min = 5, message = "*Your password must have at least 5 characters")
 	@NotEmpty(message = "*Please provide your password")
-	@Transient
 	private String password;
 	
 	/*@Column(name = "name")
